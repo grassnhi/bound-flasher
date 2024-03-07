@@ -32,31 +32,44 @@ module bound_flasher_tb;
     #10 flick = 1; 
     #10 flick = 0;
     #600 flick = 1; 
+    #10 rst = 0; 
+    #10 rst = 1;
+    #10 flick = 1;
     #10 flick = 0;
+    #600 rst = 0; 
+    #10 rst = 1;
 
     $display("Test Case 2: Flick at LEDs[5] of ON_0_TO_10");    
     #10 flick = 1; 
     #100 flick = 0;
     #50 flick = 1; // here
     #50 flick = 0;
+    #600 rst = 0; 
+    #10 rst = 1;
     
     $display("Test Case 3: Flick at LEDs[10] of ON_0_TO_10");
     #10 flick = 1; 
     #10 flick = 0;
     #200 flick = 1; // here
     #150 flick = 0;
+    #500 rst = 0; 
+    #10 rst = 1;
     
     $display("Test Case 4: Flick at LEDs[5] of ON_5_TO_15");
     #10 flick = 1; 
     #10 flick = 0;
     #250 flick = 1; // here
     #100 flick = 0;
+    #400 rst = 0; 
+    #10 rst = 1;
     
     $display("Test Case 5: Flick at LEDs[10] of ON_5_TO_15");
     #10 flick = 1; 
     #10 flick = 0;
     #300 flick = 1;
     #50 flick = 0;
+    #400 rst = 0; 
+    #10 rst = 1;
     
     $display("Test Case 6: Flick at LEDs[5] then LEDs[10] of ON_5_TO_10");
     #10 flick = 1; 
@@ -65,6 +78,8 @@ module bound_flasher_tb;
     #50 flick = 0;
     #150 flick = 1; // here
     #50 flick = 0;
+    #600 rst = 0; 
+    #10 rst = 1;
 
     $display("Test Case 7: Flick at LEDs[5] and then LEDs[10] of ON_5_TO_15");
     #10 flick = 1; 
@@ -73,7 +88,9 @@ module bound_flasher_tb;
     #100 flick = 0;
     #50 flick = 1; // here
     #50 flick = 0;
-
+    #400 rst = 0; 
+    #10 rst = 1;
+    
     $display("Test Case 8: Flick at certain LEDs[5] and LEDs[10] of ON states");
     #10 flick = 1; 
     #100 flick = 0;
@@ -85,6 +102,8 @@ module bound_flasher_tb;
     #150 flick = 0;
     #100 flick = 1; // here
     #50 flick = 0;
+    #200 rst = 0; 
+    #10 rst = 1;
 
     $display("Test Case 9: Flick signal at any time slot (not kickback point)");
     #20 flick = 1;
@@ -99,6 +118,8 @@ module bound_flasher_tb;
     #30 flick = 0;
     #20 flick = 1;
     #50 flick = 0;
+    #200 rst = 0; 
+    #10 rst = 1;
     
     $display("Test Case 10: Reset signal at any time slot (not kickback point)");
     #50 rst = 0; 
@@ -113,7 +134,8 @@ module bound_flasher_tb;
     #20 rst = 1;
     #10 flick = 1;
     #10 flick = 0;    
-    #400 rst = 0;
+    #50 rst = 0;
+    #100 rst = 1;
     
     $display("Test Case 11: Multiple Resets and Flicking");
     #10 flick = 1; 
@@ -130,6 +152,7 @@ module bound_flasher_tb;
     #80 flick = 0;
     #250 flick = 1; 
     #150 rst = 0;
+    #100 rst = 1;
     
     $display("Test Case 12: Reset signal with flick signal at kickback point.");
     #10 flick = 1;
@@ -138,11 +161,9 @@ module bound_flasher_tb;
     #10 flick = 0;
     #250 flick = 1;
     #80 rst = 0;
-    #10 rst = 1; 
-    #10 flick = 0;
+    #50 rst = 1; 
 
     $display("Test Case 13: Flick signal at the OFF states");
-    #20 rst = 1;
     #10 flick = 1;
     #10 flick = 0;
     #60 flick = 1;
@@ -153,9 +174,10 @@ module bound_flasher_tb;
     #80 flick = 0;
     #80 flick = 1;
     #10 flick = 0;
+    #10 rst = 0;
+    #10 rst = 1;
     
     $display("Test Case 14: Flick signal is randomly active");
-    #20 rst = 1;
     #10 flick = 1;
     #10 flick = 0;
     #20 flick = 1;
@@ -167,6 +189,8 @@ module bound_flasher_tb;
     repeat (20) begin
       #20 flick = ~flick;
     end
+    #400 rst = 0; 
+    #10 rst = 1;
     
     $display("Test Case 15: Reset signal is randomly active");
     #10 rst = 0;
@@ -183,8 +207,10 @@ module bound_flasher_tb;
     #10 rst = 1;
     #10 flick = 1;
     #10 flick = 0;
+    #400 rst = 0; 
+    #10 rst = 1;
     
-    #200 $finish;
+    #50 $finish;
   end
 
 initial begin
