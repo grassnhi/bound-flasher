@@ -187,4 +187,9 @@ module bound_flasher_tb;
     #200 $finish;
   end
 
+initial begin
+  $recordfile ("waves");
+  $recordvars ("depth=0", bound_flasher_tb);
+end
+
 endmodule

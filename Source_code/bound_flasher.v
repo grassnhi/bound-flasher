@@ -92,13 +92,13 @@ module bound_flasher(
                     next_state = (LEDs[5] == 0) ? ON_5_TO_15 : OFF_10_TO_5;
                 end
                 ON_5_TO_15: begin
-                    if (flick == 1 && LEDs[15] == 1) begin
+                    if (flick == 1 && LEDs[5] == 1 && LEDs[6] == 0) begin
                         next_state = OFF_10_TO_5;
                     end
                     else if (flick == 1 && LEDs[10] == 1 && LEDs[11] == 0) begin
                         next_state = OFF_10_TO_5;
                     end
-                    else if (flick == 0 && LEDs[15] == 1) begin
+                    else if (LEDs[15] == 1) begin
                         next_state = OFF_15_TO_0;
                     end 
                 end
