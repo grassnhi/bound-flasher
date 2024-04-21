@@ -1,0 +1,88 @@
+                          CONFORMAL (R)
+                   Version 20.10-p100 (01-May-2020) (64 bit executable)
+   Copyright (c) Cadence Design Systems, Inc., 1997-2019. All Rights Reserved
+
+
+This program is proprietary and confidential information belonging to
+Cadence Design Systems, Inc., and may be used and disclosed only as authorized
+in a license agreement controlling such use and disclosure.
+
+// Warning: This version is 1431 days old. You can download the latest version from http://downloads.cadence.com.
+
+0
+CPU time     : 0.95    seconds
+Elapse time  : 136     seconds
+Memory usage : 260.43  M bytes
+// Command: read_library slow.lib -lib -revised
+// Parsing file slow.lib ...
+// Warning: (RTL9.17) Cell doesn't have any output pins or all output pins are undriven (blackboxed) (occurrence:1)
+// Note: (RTL9.26) Liberty pin with internal_node use default input_map (occurrence:16)
+// Note: Read Liberty library successfully
+0
+CPU time     : 1.27    seconds
+Elapse time  : 144     seconds
+Memory usage : 278.05  M bytes
+// Command: read_design bound_flasher.v -verilog -golden
+// Parsing file bound_flasher.v ...
+// Golden root module is set to 'bound_flasher'
+// Warning: (RTL1.5a) Assignment with RHS bit width is greater than LHS bit width (occurrence:3)
+// Warning: (RTL1.8) Latch is assigned by blocking assignments (occurrence:13)
+// Note: (RTL8.2) Latch(es) are inferred due to self assignment (occurrence:1)
+// Warning: (DIR6.1) Ignored compiler directive is detected (occurrence:1)
+// Note: Read VERILOG design successfully
+0
+CPU time     : 1.41    seconds
+Elapse time  : 163     seconds
+Memory usage : 293.08  M bytes
+// Command: read_design bound_flasher_m.v -verilog -revised
+// Parsing file bound_flasher_m.v ...
+// Revised root module is set to 'bound_flasher'
+// Warning: (RTL14) Signal has input but it has no output (occurrence:3)
+// Note: Read VERILOG design successfully
+0
+CPU time     : 1.55    seconds
+Elapse time  : 182     seconds
+Memory usage : 293.08  M bytes
+// Command: set_mapping_method -name only
+0
+// Command: set_system_mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// Processing Revised ...
+// Modeling Revised ...
+CPU time     : 1.77    seconds
+Elapse time  : 205     seconds
+Memory usage : 317.79  M bytes
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF    DLAT      Total   
+--------------------------------------------------------------------------------
+Golden            3      16     19     3         41      
+--------------------------------------------------------------------------------
+Revised           3      16     19     3         41      
+================================================================================
+0
+// Command: map_key_points
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF    DLAT      Total   
+--------------------------------------------------------------------------------
+Golden            3      16     19     3         41      
+--------------------------------------------------------------------------------
+Revised           3      16     19     3         41      
+================================================================================
+0
+// Command: add_compared_points -all
+// 38 compared points added to compare list
+0
+// Command: compare
+================================================================================
+Compared points      PO     DFF    DLAT      Total   
+--------------------------------------------------------------------------------
+Equivalent           16     19     3         38      
+================================================================================
+0
